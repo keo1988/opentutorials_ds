@@ -1,0 +1,9 @@
+select * from swcategory where id ='ff80808152c8b1110152d3db08210047'
+
+select a.name, count(b) from swpackage a INNER JOIN prcprcinst b ON a.packageid = b.prcpackageid WHERE a.status='DEPLOYED' group by a.name
+
+select a.name, count(b),max(c.name)  from swpackage a, prcprcinst b, swcategory c where a.packageid = b.prcpackageid AND a.status='DEPLOYED' group by a.name
+
+select * from swpackage where categoryid='ff80808152c8b1110152d3db08210047'
+
+select a.name, b.name from swcategory a, swpackage b where a.id = b.categoryid AND b.status='DEPLOYED'
